@@ -9,7 +9,7 @@ terraform {
 
 provider "netlify" {
   # Token will be read automatically from the NETLIFY_API_TOKEN env variable
-  default_team_slug = "shark"
+  default_team_slug = "swagoon99"
 }
 
 # Reference an existing Netlify site

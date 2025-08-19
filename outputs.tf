@@ -3,9 +3,9 @@ output "site_id" {
   value       = data.netlify_site.mynetlifyhug.id
 }
 
-output "site_admin_url" {
-  description = "The Netlify Site Admin URL"
-  value       = data.netlify_site.mynetlifyhug.admin_url
+output "site_url" {
+  description = "The live Netlify site URL"
+  value       = data.netlify_site.mynetlifyhug.url
 }
 
 output "site_name" {
