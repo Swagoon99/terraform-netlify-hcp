@@ -1,16 +1,10 @@
 provider "netlify" {
-  token = var.netlify_token
-}
-
-variable "netlify_token" {
-  description = "Netlify Personal Access Token"
-  type        = string
-  sensitive   = true
+  token = var.netlify_token != "" ? var.netlify_token : getenv("NETLIFY_TOKEN")
 }
 
 resource "netlify_site" "site" {
-  name = "hug-ibadan-demo"   # or use a variable for uniqueness
-  custom_domain = ""          # optional
+  name          = "hug-ibadan-demo"   # you can also make this a variable
+  custom_domain = ""                  # optional
 }
 
 resource "netlify_site_deploy" "deploy" {
