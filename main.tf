@@ -3,8 +3,8 @@ provider "netlify" {
 }
 
 resource "netlify_site" "site" {
-  name          = "hug-ibadan-demo"   # you can also make this a variable
-  custom_domain = ""                  # optional
+  name          = "hug-ibadan-demo"
+  custom_domain = ""  # Optional: Set your custom domain here
 }
 
 resource "netlify_site_deploy" "deploy" {
