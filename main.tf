@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "netlify" {
-  # Token will be read automatically from the NETLIFY_API_TOKEN env variable
-  default_team_slug = "swagoon99"
+  token             = var.netlify_api_token
+  default_team_slug = "swagoon99"  # replace with your team slug
 }
 
 # Reference an existing Netlify site
 data "netlify_site" "mynetlifyhug" {
-  name = "mynetlifyhug" # Replace with your exact Netlify site name
+  name = "mynetlifyhug"  # replace with your exact site name
 }
