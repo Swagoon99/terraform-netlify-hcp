@@ -1,5 +1,5 @@
-variable "netlify_api_token" {
-  description = "Netlify Personal Access Token"
+variable "site_name" {
+  description = "The name of the Netlify site"
   type        = string
-  sensitive   = true
+  default     = "mynetlifyhug"
 }
