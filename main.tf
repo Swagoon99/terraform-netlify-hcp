@@ -1,15 +1,19 @@
 provider "netlify" {
-  default_team_slug = "swagoon"  
+  default_team_slug = "swagoon"
 }
 
-# Create a new Netlify site using a variable for the name
+# Deploy key so Netlify can access your GitHub repo
+resource "netlify_deploy_key" "deploy_key" {}
+
+# Create a new Netlify site
 resource "netlify_site" "mynetlifyhug" {
-  name = var.site_name
-}
+  name = var.site_name   # site name comes from variables.tf
 
-# Deploy the site (optional: specify dir, repo, etc.)
-resource "netlify_deploy" "deploy" {
-  site_id = netlify_site.mynetlifyhug.id
-  dir     = "site" # Adjust to match your local site folder
-  prod    = true
+  repo {
+    provider      = "github"
+    repo          = "git@github.com:FrederickAdigun/terraform-netlify-hcp.git"
+    dir           = "site"
+    branch        = "main"
+    deploy_key_id = netlify_deploy_key.deploy_key.id
+  }
 }
