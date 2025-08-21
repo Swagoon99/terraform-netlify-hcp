@@ -8,12 +8,7 @@ output "site_name" {
   value       = data.netlify_site.site.name
 }
 
-output "site_custom_domain" {
-  description = "Custom domain if configured, otherwise null"
-  value       = length(data.netlify_site.site.custom_domain) > 0 ? data.netlify_site.site.custom_domain : null
-}
-
-output "site_domain_aliases" {
-  description = "Domain aliases attached to the site"
-  value       = data.netlify_site.site.domain_aliases
+output "site_default_url" {
+  description = "The default Netlify subdomain for the site"
+  value       = "https://${data.netlify_site.site.name}.netlify.app"
 }
