@@ -8,7 +8,12 @@ output "site_name" {
   value       = data.netlify_site.site.name
 }
 
-output "site_url" {
-  description = "The live URL of the deployed Netlify site"
-  value       = data.netlify_site.site.ssl_url
+output "site_git_key" {
+  description = "The Git deploy key of the Netlify site"
+  value       = data.netlify_site.site.git_deploy_key
+}
+
+output "site_domain" {
+  description = "Custom domain of the Netlify site"
+  value       = data.netlify_site.site.custom_domain
 }
