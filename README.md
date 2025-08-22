@@ -1,4 +1,4 @@
-Static Site Deployment on Netlify using Terraform with HCP Remote State
+Deploying a Static Site on Netlify with Terraform and HCP Remote State Management
 
 This project demonstrates how to manage a simple static site on Netlify using Terraform while storing the Terraform state securely in HCP Terraform (Terraform Cloud).
 The approach is lightweight, reproducible, and secure.
